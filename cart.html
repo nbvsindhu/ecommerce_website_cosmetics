@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart - View Cart</title>
+  <link rel="stylesheet" href="css/cart_styles.css"> <!-- Link to external CSS -->
+</head>
+<body>
+  <h1>Your Shopping Cart</h1>
+  <table id="cart-table">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Total</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="cart-items">
+      <!-- Cart items will be injected here by JavaScript -->
+    </tbody>
+  </table>
+
+  <h2>Total: Rs.<span id="total-price">0.00</span></h2>
+  <br>
+  <center><a href="index.html">Back to Shopping</a></center>
+
+  <script>
+    function showCartItems() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const cartItemsContainer = document.getElementById('cart-items');
+      cartItemsContainer.innerHTML = ''; // Clear the table body
+
+      let totalPrice = 0;
+
+      cart.forEach(item => {
+        const row = document.createElement('tr');
+
+        // Product name
+        const nameCell = document.createElement('td');
+        nameCell.textContent = item.name;
+        row.appendChild(nameCell);
+
+        // Quantity
+        const qtyCell = document.createElement('td');
+        qtyCell.textContent = item.qty;
+        row.appendChild(qtyCell);
+
+        // Price
+        const priceCell = document.createElement('td');
+        priceCell.textContent = `${item.price}`;
+        row.appendChild(priceCell);
+
+        // Total for this item
+        const totalCell = document.createElement('td');
+        totalCell.textContent = `${item.price * item.qty}`;
+        row.appendChild(totalCell);
+
+        // Remove button
+        const removeCell = document.createElement('td');
+        const removeButton = document.createElement('button');
+        removeButton.textContent = 'Remove';
+        removeButton.classList.add('remove-btn');
+        removeButton.onclick = function () {
+          removeCartItem(item.name); // Use the name to remove the item
+        };
+        removeCell.appendChild(removeButton);
+        row.appendChild(removeCell);
+
+        cartItemsContainer.appendChild(row);
+
+        // Update total price
+        totalPrice += item.price * item.qty;
+      });
+
+      // Update total price display
+      document.getElementById('total-price').textContent = totalPrice.toFixed(2);
+    }
+
+    function removeCartItem(name) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      // Remove item by name
+      cart = cart.filter(item => item.name !== name);
+
+      // Save the updated cart back to localStorage
+      localStorage.setItem('cart', JSON.stringify(cart));
+
+      // Re-render the cart after removal
+      showCartItems();
+    }
+
+    // Display cart items when the page loads
+    showCartItems();
+  </script>
+</body>
+</html>

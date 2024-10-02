@@ -1,0 +1,116 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+  }
+  
+  .header{
+    width: 100%;
+    height: 60px;
+    background-color: bisque;
+    display: flex;
+    justify-content: space-between;
+}
+
+li{
+    list-style-type: none;
+    display: inline-block;
+}
+
+.left{
+    padding: 10px;
+    font-size: 40px;
+}
+
+.rightEle{
+    padding: 20px;
+    font-size: x-large;
+}
+
+
+  h1 {
+    color: #333;
+  }
+  
+  .product-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .product-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 400px;
+    height: 550px;
+    text-align: center;
+  }
+  
+  .product-image {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+  }
+  
+  .cart-btn, .view-cart-btn, .back-to-shop-btn {
+    background-color:bisque;
+    color: black;
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+  }
+  
+  .cart-btn:hover, .view-cart-btn:hover, .back-to-shop-btn:hover {
+    background-color: grey;
+  }
+  
+  .cart-btn {
+    margin-top: 10px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .remove-btn {
+    background-color: red;
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+  .remove-btn:hover {
+    background-color: darkred;
+  }
+  
+  #total-price {
+    font-weight: bold;
+  }
+  
+  .thumbnails img {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#mainImage1,  #mainImage2, #mainImage3{
+    width: 300px; /* Set initial width */
+    height: 300px; /* Set initial height */
+    object-fit: cover; /* Ensure image fits within container */
+    transition: transform 0.3s ease; /* Smooth zoom transition */
+  }
+  
+  #mainImage1:hover, #mainImage2:hover, #mainImage3:hover {
+    transform: scale(1.2); /* Zoom in by 20% on hover */
+  }

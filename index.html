@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Catalog</title>
+  <link rel="stylesheet" href="css/styles.css"> <!-- Link to external CSS -->
+  <script src="js/script.js" defer></script>   <!-- Link to external JS -->
+</head>
+<body>
+    <div class="header">
+        <div class="left">
+            <img src="images/logo.png" width="70px" height="40px">
+            COSMETICS
+        </div>
+        <div class="right">
+            <li class="rightEle"><a href="cart.html" class="view-cart-btn">View Cart</a></li>
+        </div>
+    </div>
+    <br><br>
+
+    <div class="product-list">
+
+        <!-- Foundation Stick Product -->
+        <div class="product-item">
+          <div class="product-gallery">
+            <img src="images/foundation/3.jpeg" alt="foundation" class="product-image" id="mainImage1" width="400px" height="400px">
+            <div class="thumbnails">
+              <img src="images/foundation/3.jpeg" alt="Thumbnail 1" onclick="switchImage('mainImage1', 'images/foundation/3.jpeg')" width="100px" height="100px">
+              <img src="images/foundation/2.jpeg" alt="Thumbnail 2" onclick="switchImage('mainImage1', 'images/foundation/2.jpeg')" width="100px" height="100px">
+              <img src="images/foundation/1.jpeg" alt="Thumbnail 3" onclick="switchImage('mainImage1', 'images/foundation/1.jpeg')" width="100px" height="100px">
+            </div>
+          </div>
+          <span>Foundation Stick - Rs. 499</span><br><br>
+          <input type="number" id="foundation-qty" placeholder="Quantity" min="1" /><br>
+          <button class="cart-btn" onclick="addToCart('Foundation', 499, document.getElementById('foundation-qty').value)">Add to Cart</button>
+        </div>
+      
+        <!-- Lip Crayon Product -->
+        <div class="product-item">
+          <div class="product-gallery">
+            <img src="images/lip_crayon/1.jpeg" alt="Lip Crayon" class="product-image" id="mainImage2" width="400px" height="400px">
+            <div class="thumbnails">
+              <img src="images/lip_crayon/1.jpeg" alt="Thumbnail 1" onclick="switchImage('mainImage2', 'images/lip_crayon/1.jpeg')" width="100px" height="100px">
+              <img src="images/lip_crayon/2.jpeg" alt="Thumbnail 2" onclick="switchImage('mainImage2', 'images/lip_crayon/2.jpeg')" width="100px" height="100px">
+              <img src="images/lip_crayon/3.jpeg" alt="Thumbnail 3" onclick="switchImage('mainImage2', 'images/lip_crayon/3.jpeg')" width="100px" height="100px">
+            </div>
+          </div>
+          <span>Lip Crayon - Rs. 499</span><br><br>
+          <input type="number" id="lip-crayon-qty" placeholder="Quantity" min="1" /><br>
+          <button class="cart-btn" onclick="addToCart('Lip Crayon', 499, document.getElementById('lip-crayon-qty').value)">Add to Cart</button>
+        </div>
+      
+        <!-- Lip Balm Product -->
+        <div class="product-item">
+          <div class="product-gallery">
+            <img src="images/lip_balm/1.jpeg" alt="Lip Balm" class="product-image" id="mainImage3" width="400px" height="400px">
+            <div class="thumbnails">
+              <img src="images/lip_balm/1.jpeg" alt="Thumbnail 1" onclick="switchImage('mainImage3', 'images/lip_balm/1.jpeg')" width="100px" height="100px">
+              <img src="images/lip_balm/2.jpeg" alt="Thumbnail 2" onclick="switchImage('mainImage3', 'images/lip_balm/2.jpeg')" width="100px" height="100px">
+              <img src="images/lip_balm/3.jpeg" alt="Thumbnail 3" onclick="switchImage('mainImage3', 'images/lip_balm/3.jpeg')" width="100px" height="100px">
+            </div>
+          </div>
+          <span>Lip Balm - Rs. 149</span><br><br>
+          <input type="number" id="lip-qty" placeholder="Quantity" min="1" /><br>
+          <button class="cart-btn" onclick="addToCart('Lip Balm', 149, document.getElementById('lip-qty').value)">Add to Cart</button>
+        </div>
+      
+      </div>
+      
+  
+</body>
+</html>
